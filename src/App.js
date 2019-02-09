@@ -38,7 +38,8 @@ class App extends Component {
   }
 
   handleNewEntry = (update) => {
-    axios.pus(apiUrl, update).then(res => {
+    console.log(update)
+    axios.post(apiUrl, update).then(res => {
       this.setState({
         directory: res.data
       })
@@ -65,7 +66,7 @@ class App extends Component {
               deleteFn={this.handleDeleteEntry} 
               updateFn={this.handleEntryUpdate} 
               directory={this.state.directory}
-              newEntry={this.handleNewEntry} 
+              newEntryFn={this.handleNewEntry} 
             />
           </div>
         </div>

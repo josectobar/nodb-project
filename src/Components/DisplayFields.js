@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Edit from './Edit'
 import Delete from './Delete'
+import Add from './Add'
 
 export default class DisplayFields extends Component {
 
@@ -18,6 +19,7 @@ export default class DisplayFields extends Component {
         })
         return(
             <div>
+                <Add newEntryFn={this.props.newEntryFn}/>
                 {displayDirectory}
             </div>
         )
