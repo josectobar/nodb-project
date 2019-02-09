@@ -50,15 +50,15 @@ export default class Edit extends Component {
         const { firstName, lastName, phone, address, email } = this.state
         return (
             <div>
-                <button onClick={this.handleEditMode}>Edit</button>
+                <button className="edit-btn" onClick={this.handleEditMode}>Edit</button>
                 {this.state.showEdit &&
-                    <div>
+                    <div className="edit-container">
                         <input name="firstName" onChange={this.handleUserInput} value={firstName}/>
                         <input name="lastName" onChange={this.handleUserInput} value={lastName}/>
                         <input name="address"onChange={this.handleUserInput} value={address}/>
                         <input name="phone" onChange={this.handleUserInput} value={phone}/>
                         <input name="email" onChange={this.handleUserInput} value={email}/>
-                        <button onClick={this.handleSubmit}>Submit</button>
+                        <button className="submit-btn" onClick={this.handleSubmit}><strong>Submit</strong></button>
                     </div>
                 }
             </div>

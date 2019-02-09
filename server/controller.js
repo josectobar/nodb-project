@@ -46,6 +46,7 @@ module.exports = {
             email
         })
         id++
+        
         res.status(200).send(directoryArray)
     },
     editDirectory: (req, res) => {

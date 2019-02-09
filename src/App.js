@@ -60,16 +60,12 @@ class App extends Component {
         <div className="title-header">
           <h1>{"<"}Comm{">"}Unity</h1>
         </div>
-        <div className="main-container">
-          <div className="display-container">
             <DisplayFields 
               deleteFn={this.handleDeleteEntry} 
               updateFn={this.handleEntryUpdate} 
               directory={this.state.directory}
               newEntryFn={this.handleNewEntry} 
             />
-          </div>
-        </div>
       </div>
     );
   }

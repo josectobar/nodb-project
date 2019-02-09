@@ -8,7 +8,7 @@ export default class DisplayFields extends Component {
     render(){
         const displayDirectory = this.props.directory.map(entry => {
             return (
-                <div className="text-container" key={entry.id} style={{border:"1px solid black"}}>
+                <div className="entry-container" key={entry.id}>
                     {<Edit updateFn={this.props.updateFn} entry={entry}/>}
                     {<Delete id={entry.id} deleteFn={this.props.deleteFn} />}
                     <h3>{entry.firstName} {entry.lastName}</h3>
@@ -18,9 +18,11 @@ export default class DisplayFields extends Component {
             )
         })
         return(
-            <div>
+            <div className="display-container">
                 <Add newEntryFn={this.props.newEntryFn}/>
+                <div className="text-container">
                 {displayDirectory}
+                </div>
             </div>
         )
     }
