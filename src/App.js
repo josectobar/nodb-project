@@ -37,7 +37,15 @@ class App extends Component {
     })
   }
 
-  handleDeleteEntry= (id) => {
+  handleNewEntry = (update) => {
+    axios.pus(apiUrl, update).then(res => {
+      this.setState({
+        directory: res.data
+      })
+    })
+  }
+
+  handleDeleteEntry = (id) => {
     axios.delete(`${apiUrl}/${id}`).then(res => {
       this.setState({
         directory: res.data
@@ -53,7 +61,12 @@ class App extends Component {
         </div>
         <div className="main-container">
           <div className="display-container">
-            <DisplayFields deletefn={this.handleDeleteEntry} updateFn={this.handleEntryUpdate} directory={this.state.directory} />
+            <DisplayFields 
+              deleteFn={this.handleDeleteEntry} 
+              updateFn={this.handleEntryUpdate} 
+              directory={this.state.directory}
+              newEntry={this.handleNewEntry} 
+            />
           </div>
         </div>
       </div>

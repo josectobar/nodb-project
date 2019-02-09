@@ -3,9 +3,6 @@ import Edit from './Edit'
 import Delete from './Delete'
 
 export default class DisplayFields extends Component {
-    // constructor(props){
-    //     super(props)
-    // }
 
     render(){
         const displayDirectory = this.props.directory.map(entry => {
@@ -15,8 +12,7 @@ export default class DisplayFields extends Component {
                     {<Delete id={entry.id} deleteFn={this.props.deleteFn} />}
                     <h3>{entry.firstName} {entry.lastName}</h3>
                     <p>{entry.address}</p>
-                    <p>{entry.phone}</p>
-                    <p>{entry.email}</p>
+                    <span>{entry.phone} </span><span> {entry.email}</span>
                 </div>
             )
         })

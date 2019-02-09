@@ -1,19 +1,18 @@
 import React, { Component } from 'react'
-
+const defaultState = {
+    id: ``,
+    firstName: ``,
+    lastName: ``,
+    phone:``,
+    address:``,
+    email:``,
+    showEdit: false
+}
 
 export default class Edit extends Component {
     constructor(props) {
         super(props)
-
-        this.state = {
-            id: ``,
-            firstName: ``,
-            lastName: ``,
-            phone:``,
-            address:``,
-            email:``,
-            showEdit: false
-        }
+        this.state = defaultState
     }
 
     handleEditMode = () => {
@@ -36,16 +35,13 @@ export default class Edit extends Component {
     }
 
     handleSubmit = () => {
-        const { id, firstName, lastName, phone, address, email } = this.state
-        this.props.updateFn({ id, firstName, lastName, phone, address, email })
+        this.props.updateFn(this.state)
+        this.setState(defaultState)
+    }
+
+    handleNewEntry = (event) => {
         this.setState({
-            id: ``,
-            firstName: ``,
-            lastName: ``,
-            phone:``,
-            address:``,
-            email:``,
-            showEdit: false
+            [event.target.name]: event.target.value
         })
     }
 
