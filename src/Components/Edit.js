@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+
 const defaultState = {
     id: ``,
     firstName: ``,
@@ -53,11 +54,11 @@ export default class Edit extends Component {
                 <button className="edit-btn" onClick={this.handleEditMode}>Edit</button>
                 {this.state.showEdit &&
                     <div className="edit-container">
-                        <input name="firstName" onChange={this.handleUserInput} value={firstName}/>
-                        <input name="lastName" onChange={this.handleUserInput} value={lastName}/>
-                        <input name="address"onChange={this.handleUserInput} value={address}/>
-                        <input name="phone" onChange={this.handleUserInput} value={phone}/>
-                        <input name="email" onChange={this.handleUserInput} value={email}/>
+                        <input className="firstname-edit-input"name="firstName" onChange={this.handleUserInput} placeholder="Firstname" value={firstName}/>
+                        <input className="lastname-edit-input" name="lastName" onChange={this.handleUserInput} placeholder="Lastname" value={lastName}/>
+                        <input className="address-edit-input"name="address"onChange={this.handleUserInput} placeholder="Address" value={address}/>
+                        <input className="phone-edit-input"name="phone" onChange={this.handleUserInput} placeholder="Phone" value={phone}/>
+                        <input className="email-edit-input"name="email" onChange={this.handleUserInput} placeholder="Email" value={email}/>
                         <button className="submit-btn" onClick={this.handleSubmit}><strong>Submit</strong></button>
                     </div>
                 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import DisplayFields from './Components/DisplayFields'
+import CaseNotes from './Components/CaseNotes'
 import './App.css'
 
 const apiUrl = '/api/directory'
@@ -11,7 +12,8 @@ class App extends Component {
     super()
 
     this.state = {
-      directory: []
+      directory: [],
+      showCaseNotes: false
     }
   }
 
@@ -58,6 +60,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="title-header">
+          <button className="case-notes-btn" onClick={() => this.setState({showCaseNotes: !this.state.showCaseNotes})}><strong>Case notes</strong></button>
           <h1>{"<"}Comm{">"}Unity</h1>
         </div>
             <DisplayFields 
@@ -66,6 +69,9 @@ class App extends Component {
               directory={this.state.directory}
               newEntryFn={this.handleNewEntry} 
             />
+        {this.state.showCaseNotes &&
+            <CaseNotes />
+        }
       </div>
     );
   }

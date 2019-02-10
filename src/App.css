@@ -2,20 +2,22 @@
   box-sizing: border-box;
 }
 body {
-  background-color: rgb(70, 70, 70);
+  background-color: rgb(184, 184, 184);
 }
 
-.title-header, .display-container, .text-container {
+.title-header, .display-container, .text-container, .case-notes-main-container {
   width: 800px;
-}
-
-.title-header, .display-container {
-  border: 3px solid rgb(194, 194, 194); 
-  border-radius:10px;
-}
-
-.title-header {
   background: white;
+}
+
+.title-header, .display-container, .case-notes-main-container {
+  border: 2px solid rgb(194, 194, 194); 
+  border-radius:10px;
+  box-shadow: 5px 5px 20px 2px rgb(61, 61, 61)
+}
+
+.title-header, .case-notes-main-container {
+  position: relative;
   text-align: center;
   margin: 30px auto;
 }
@@ -25,15 +27,14 @@ body {
   font-size: 30px;
 }
 
-.display-container {
+.display-container{
   margin: 0 auto;
-  background-color: white;
   padding: 10px;
   display: flex;
 }
 
 .add-container {
-  width: 100%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,7 +49,7 @@ body {
   padding: 5px;
 }
 
-.add-btn, .submit-btn {
+.add-btn, .submit-btn, .case-notes-btn {
   background-color: rgb(6, 62, 248);
   border-radius: 5px;
   color: white;
@@ -58,6 +59,25 @@ body {
   font-size: 15px;
   margin: 0 auto;
   text-decoration: none;
+  border: none;
+  box-shadow: 1px 1px 4px 1px rgb(138, 138, 138)
+}
+
+.case-notes-btn {
+  position: Absolute;
+  left: 20px;
+  top: 20px;
+  background-color: rgb(6, 62, 248);
+  border-radius: 5px;
+  color: white;
+  padding: .4em;
+  width: 80px;
+  text-align: center;
+  font-size: 10px;
+  margin: 0 auto;
+  text-decoration: none;
+  border: none;
+  box-shadow: 1px 1px 4px 1px rgb(138, 138, 138)
 }
 
 .add-btn:hover , .submit-btn:hover {
@@ -66,14 +86,15 @@ body {
 }
 
 .text-container {
-  height: 350px;
+  height: 380px;
   overflow: scroll;
+  background-color: rgb(247, 247, 247)
 }
 
 .entry-container {
   position: relative;
   padding: 10px;
-  border-bottom: 1px solid rgb(206, 206, 206);
+  border-bottom: 1px solid rgb(243, 243, 243);
 }
 
 .entry-container p, h3 {
@@ -87,18 +108,35 @@ body {
 }
 
 .edit-btn {
-  right: 70px;
+  right: 60px;
 }
 
 .delete-btn {
-  right: 20px;
+  right: 10px;
 }
 
 .edit-container {
   position: absolute;
   width: inherit;
   height: 70px;
-  background-color: white;
+  background-color: rgb(247, 247, 247)
+}
+
+.edit-container input {
+  height: 21px;
+  font-size: 15px;
+  border: none;
+  margin: 1.5px;
+  background: rgb(255, 244, 244);
+
+}
+
+.address-edit-input {
+  width: 335px;
+}
+
+.firstname-edit-input, .lastname-edit-input, .phone-edit-input, .email-edit-input {
+  width: 165px;
 }
 
 .submit-btn {
@@ -106,3 +144,4 @@ body {
   bottom: 10px;
   right: 20px;
 }
+
