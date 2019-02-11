@@ -1,8 +1,20 @@
 * {
   box-sizing: border-box;
 }
+
+.background {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(12, 56, 105, 0.9);
+  position: fixed;
+  top: 0;
+  z-index: -1;
+}
+
 body {
-  background-color: rgb(184, 184, 184);
+  background-color: rgb(74, 137, 156);
+  opacity: 0.97;
+  
 }
 
 .title-header, .display-container, .text-container, .case-notes-main-container {
@@ -13,7 +25,7 @@ body {
 .title-header, .display-container, .case-notes-main-container {
   border: 2px solid rgb(194, 194, 194); 
   border-radius:10px;
-  box-shadow: 5px 5px 20px 2px rgb(61, 61, 61)
+  box-shadow: 5px 5px 20px 2px rgb(5, 10, 78)
 }
 
 .title-header, .case-notes-main-container {
@@ -144,4 +156,23 @@ body {
   bottom: 10px;
   right: 20px;
 }
+
+.case-notes-main-container {
+  text-align: center;
+  margin: 30px auto;
+}
+.case-notes-sub-container {
+  display: flex;
+}
+
+.case-notes-main-container h2 {
+  width: 100%;
+  height: 20px;
+}
+
+.notes-directory, .notes-display {
+  width: 40%;
+}
+
+
 

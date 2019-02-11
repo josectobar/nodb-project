@@ -5,7 +5,8 @@ const defaultState = {
     lastName: ``,
     phone:``,
     address:``,
-    email:``
+    email:``,
+    caseNotes: [{}]
 }
 
 export default class Add extends Component {
@@ -22,6 +23,12 @@ export default class Add extends Component {
     }
 
     handleAddInput = () => {
+        let tempState = Object.values(this.state)
+            for (let i = 0 ; i < tempState.length; i++) {
+                if ( tempState[i] === '' ) {
+                    return alert('Please add all fields')
+                } 
+            }
         this.props.newEntryFn(this.state)
         this.setState(defaultState)
     }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import DisplayFields from './Components/DisplayFields'
 import CaseNotes from './Components/CaseNotes'
+
 import './App.css'
 
 const apiUrl = '/api/directory'
@@ -32,7 +33,6 @@ class App extends Component {
   handleEntryUpdate = (update) => {
     const id = update.id
     axios.put(`${apiUrl}/${id}`, update).then(res => {
-      console.log(res.data)
       this.setState({
         directory: res.data
       })
@@ -40,7 +40,6 @@ class App extends Component {
   }
 
   handleNewEntry = (update) => {
-    console.log(update)
     axios.post(apiUrl, update).then(res => {
       this.setState({
         directory: res.data
@@ -56,9 +55,13 @@ class App extends Component {
     })
   }
 
+
+
   render() {
     return (
       <div className="App">
+      <div className="background">
+      </div>
         <div className="title-header">
           <button className="case-notes-btn" onClick={() => this.setState({showCaseNotes: !this.state.showCaseNotes})}><strong>Case notes</strong></button>
           <h1>{"<"}Comm{">"}Unity</h1>
@@ -68,10 +71,10 @@ class App extends Component {
               updateFn={this.handleEntryUpdate} 
               directory={this.state.directory}
               newEntryFn={this.handleNewEntry} 
-            />
+              />
         {this.state.showCaseNotes &&
-            <CaseNotes />
-        }
+            <CaseNotes directory={this.state.directory}/>
+          }
       </div>
     );
   }

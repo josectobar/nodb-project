@@ -37,6 +37,12 @@ export default class Edit extends Component {
     }
 
     handleSubmit = () => {
+        let tempState = Object.values(this.state)
+            for (let i = 0 ; i < tempState.length; i++) {
+                if ( tempState[i] === '' ) {
+                    return alert('Please add all fields')
+                }
+            } 
         this.props.updateFn(this.state)
         this.setState(defaultState)
     }
